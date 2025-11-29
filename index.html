@@ -2,22 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hades II Trivia • Boated Fan Site</title>
+  <title>Hades II Trivia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="trivia.css">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Your own hand-written JS goes here -->
   <script src="trivia.js" defer></script>
 </head>
 <body>
-  <!-- HEADER (centered, no nav) -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand brand-centered">
@@ -28,38 +22,22 @@
         </div>
         <div class="brand-text">
           <span class="brand-title">Hades II Trivia Trial</span>
-          <span class="brand-subtitle">Fan-made site • Boated enjoyer</span>
+          <span class="brand-subtitle"></span>
         </div>
       </div>
     </div>
   </header>
-
   <main>
-    <!-- HERO -->
     <section id="hero" class="hero">
       <div class="container hero-inner single-column">
         <div class="hero-copy">
-          <p class="eyebrow">Unofficial Hades II Trivia • Boated Fan Site</p>
+          <p class="eyebrow">Hades II Trivia</p>
           <h1>How well do you know <span class="accent">Hades II</span>?</h1>
-          <p class="hero-text">
-            This is a fan-made Hades II trivia website built for a JavaScript project.
-            The goal: answer 10 questions chosen at random from a larger pool of Hades II
-            questions, then see how many you got right. All the logic lives in
-            <code>trivia.js</code>, written by hand.
-          </p>
-
           <div class="hero-actions">
             <a href="#trivia" class="btn btn-primary">Start the Trivia</a>
             <a href="#gallery" class="btn btn-ghost">Skip to Media</a>
           </div>
-
-          <ul class="hero-highlights">
-            <li>12-question Hades II pool on this page</li>
-            <li>JavaScript chooses 10 questions per playthrough (no repeats)</li>
-            <li>Players can add their own questions using the form</li>
-          </ul>
         </div>
-
         <aside class="hero-channel-card">
           <div class="channel-top">
             <img
@@ -67,20 +45,14 @@
               alt="Boated frog avatar"
               class="boated-avatar">
             <div>
-              <h2>Boated (fan page)</h2>
-              <p class="channel-tagline">
-                Hades II runs, experiments, and dumb jokes. This isn’t Boated’s site –
-                just a fan project shouting him out while you get grilled by trivia.
-              </p>
+              <h2>Boated</h2>
             </div>
           </div>
-
           <ul class="channel-list">
-            <li>High-difficulty Hades II gameplay</li>
+            <li>High-octane Hades II gameplay</li>
             <li>Max Fear clears and challenges</li>
             <li>Guides, breakdowns, and chill commentary</li>
           </ul>
-
           <a
             href="https://www.youtube.com/@Boat3d"
             target="_blank"
@@ -88,16 +60,8 @@
             class="btn btn-ghost btn-full">
             Visit Boated’s YouTube Channel
           </a>
-
-          <p class="tiny-disclaimer">
-            This site is not affiliated with, endorsed by, or sponsored by Boated or
-            Supergiant Games. It’s a student project + fan tribute.
-          </p>
-        </aside>
       </div>
     </section>
-
-    <!-- FUN FACT -->
     <section id="funfact" class="section section-light">
       <div class="container">
         <article class="fun-fact-card">
@@ -107,7 +71,7 @@
             <p>
               In Hades II you play as Melinoë, a witch and Princess of the Underworld
               who sets out to face Chronos, the Titan of Time. It’s a perfect setup for
-              a roguelike where every “run” feels like rewinding and trying again —
+              a roguelike where every “run” feels like rewinding and trying again, 
               which is exactly how this trivia game works too.
             </p>
           </div>
@@ -115,28 +79,14 @@
       </div>
     </section>
 
-    <!-- TRIVIA -->
     <section id="trivia" class="section">
       <div class="container">
         <div class="section-header">
           <h2>Hades II Trivia</h2>
-          <p>
-            JavaScript will choose 10 questions at random from the pool below (plus any
-            questions users add) and step through them one at a time. These 12 are the
-            starting pool.
-          </p>
         </div>
 
-        <!--
-          These 12 question cards form your initial question pool.
-          Your JavaScript can:
-          - read the text, options, and data-correct values
-          - randomly pick 10 unique questions per run
-          - show one question at a time to the player
-        -->
         <section class="question-bank" aria-label="Question pool (12 questions)">
           <div class="trivia-grid">
-            <!-- Q1 -->
             <article class="question-card" data-id="q1" data-correct="b">
               <h3>1. Who is the playable protagonist in Hades II?</h3>
               <ul class="option-list">
@@ -147,7 +97,6 @@
               </ul>
             </article>
 
-            <!-- Q2 -->
             <article class="question-card" data-id="q2" data-correct="a">
               <h3>2. Who is the main antagonist that Melinoë is hunting?</h3>
               <ul class="option-list">
@@ -158,7 +107,6 @@
               </ul>
             </article>
 
-            <!-- Q3 -->
             <article class="question-card" data-id="q3" data-correct="c">
               <h3>3. What genre best describes Hades II?</h3>
               <ul class="option-list">
@@ -169,7 +117,6 @@
               </ul>
             </article>
 
-            <!-- Q4 -->
             <article class="question-card" data-id="q4" data-correct="d">
               <h3>4. Which of these is <em>not</em> a core system in Hades II?</h3>
               <ul class="option-list">
@@ -180,7 +127,6 @@
               </ul>
             </article>
 
-            <!-- Q5 -->
             <article class="question-card" data-id="q5" data-correct="b">
               <h3>5. What do Olympian boons generally do?</h3>
               <ul class="option-list">
@@ -191,7 +137,6 @@
               </ul>
             </article>
 
-            <!-- Q6 -->
             <article class="question-card" data-id="q6" data-correct="a">
               <h3>6. What’s the main reason runs feel different each time?</h3>
               <ul class="option-list">
@@ -202,7 +147,6 @@
               </ul>
             </article>
 
-            <!-- Q7 -->
             <article class="question-card" data-id="q7" data-correct="b">
               <h3>7. Which statement about difficulty is most accurate?</h3>
               <ul class="option-list">
@@ -213,7 +157,6 @@
               </ul>
             </article>
 
-            <!-- Q8 -->
             <article class="question-card" data-id="q8" data-correct="b">
               <h3>8. Why do players keep doing runs after their first clear?</h3>
               <ul class="option-list">
@@ -224,7 +167,6 @@
               </ul>
             </article>
 
-            <!-- Q9 -->
             <article class="question-card" data-id="q9" data-correct="a">
               <h3>9. Which studio develops Hades II?</h3>
               <ul class="option-list">
@@ -235,7 +177,6 @@
               </ul>
             </article>
 
-            <!-- Q10 -->
             <article class="question-card" data-id="q10" data-correct="b">
               <h3>10. What kind of structure does Hades II use for its runs?</h3>
               <ul class="option-list">
@@ -246,7 +187,6 @@
               </ul>
             </article>
 
-            <!-- Q11 -->
             <article class="question-card" data-id="q11" data-correct="c">
               <h3>11. What do resources like Bones and Ashes let you do?</h3>
               <ul class="option-list">
@@ -257,7 +197,6 @@
               </ul>
             </article>
 
-            <!-- Q12 -->
             <article class="question-card" data-id="q12" data-correct="d">
               <h3>12. What makes a typical Boated Hades II video fun to watch?</h3>
               <ul class="option-list">
@@ -270,25 +209,12 @@
           </div>
         </section>
 
-        <!-- ACTIVE QUESTION AREA (for your JS to control) -->
         <section class="active-question-area" aria-label="Active trivia question">
-          <h2 class="active-heading">Current Question</h2>
-
-          <!-- JS will fill this with the current question text -->
-          <p id="activeQuestionText" class="active-question-text">
-            Click “Start Trivia” above to begin. JavaScript will load questions here.
-          </p>
-
-          <!-- JS should generate / update answer options inside this form -->
           <form id="triviaForm" class="trivia-form" autocomplete="off">
             <div id="answerOptions" class="answer-options">
-              <!-- Your JS will inject radio buttons or buttons for the current answers here -->
             </div>
-
             <div class="trivia-actions">
               <button type="submit" class="btn btn-primary">Submit Answer</button>
-              <button type="button" class="btn btn-ghost" id="nextQuestionButton">
-                Next Question
               </button>
             </div>
           </form>
@@ -304,11 +230,8 @@
         <section class="custom-section" aria-labelledby="customHeading">
           <h2 id="customHeading">Make your own Hades II question</h2>
           <p class="custom-description">
-            Players can submit new trivia questions here. Your JavaScript can validate
-            this form and add the new question into the same pool that the game
-            randomly chooses from.
+            Players can submit new trivia questions here.
           </p>
-
           <form id="customQuestionForm" class="custom-form">
             <div class="custom-form-grid">
               <label>
@@ -353,11 +276,6 @@
             </button>
           </form>
 
-          <p class="custom-note">
-            For the assignment, this proves users can add more questions. Your
-            JavaScript will actually read this data, push it into your question array,
-            and include it in future games.
-          </p>
         </section>
       </div>
     </section>
@@ -366,14 +284,8 @@
     <section id="gallery" class="section section-dark">
       <div class="container">
         <div class="section-header">
-          <h2>Hades II Gallery & Boated Clips</h2>
-          <p>
-            Extra Hades II art and Boated videos to make the site feel like a real fan
-            hub, not just a form.
-          </p>
+          <h2>Hades II Gallery</h2>
         </div>
-
-        <!-- IMAGE GRID -->
         <div class="gallery-grid">
           <figure class="gallery-item">
             <img src="images/hades-2.webp" alt="Melinoë clashing with a cloaked figure in a swirl of magic.">
@@ -400,7 +312,7 @@
           </figure>
 
           <figure class="gallery-item">
-            <img src="images/Happy_Valentine21_2025_Melino%3F.webp" alt="Melinoë and Aphrodite in a Valentine artwork.">
+            <img src="images/hecate.jpg" alt="hecate">
           </figure>
 
           <figure class="gallery-item">
@@ -436,7 +348,6 @@
           </figure>
         </div>
 
-        <!-- VIDEOS -->
         <div class="video-grid">
           <article class="video-card">
             <div class="video-wrapper">
@@ -482,13 +393,8 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <p>
-        Unofficial Hades II fan site and Boated fan project. Not affiliated with Boated
-        or Supergiant Games. Hades II © Supergiant Games.
-      </p>
     </div>
   </footer>
 </body>
