@@ -1,0 +1,174 @@
+const getElement = (selector) => document.querySelector(selector);
+
+const triviaPool = [
+  {
+    id: "q1",
+    question:
+      "What is the main hub area that Melinoë returns to between runs called?",
+    options: {
+      a: "The House of Hades",
+      b: "The Crossroads",
+      c: "The Underworld Gate",
+      d: "The Nexus",
+    },
+    correct: "b",
+  },
+  {
+    id: "q2",
+    question: "Who trains Melinoë in witchcraft and combat at the Crossroads?",
+    options: {
+      a: "Nyx",
+      b: "Hecate",
+      c: "Persephone",
+      d: "Hera",
+    },
+    correct: "b",
+  },
+  {
+    id: "q3",
+    question: "What are the Arcana Cards in Hades II mainly used for?",
+    options: {
+      a: "Unlocking new cosmetic weapon skins only",
+      b: "Permanent meta-progression upgrades",
+      c: "Changing the game’s difficulty settings",
+      d: "Summoning bosses instantly",
+    },
+    correct: "b",
+  },
+  {
+    id: "q4",
+    question: "Which resource is primarily spent to unlock new Arcana Cards?",
+    options: {
+      a: "Bones",
+      b: "Ashes",
+      c: "Nectar",
+      d: "Darkness",
+    },
+    correct: "b",
+  },
+  {
+    id: "q5",
+    question: "What is the collective name for Melinoës weapons in Hades II?",
+    options: {
+      a: "Olympian Relics",
+      b: "Nocturnal Arms",
+      c: "Stygian Tools",
+      d: "Blades of Fate",
+    },
+    correct: "b",
+  },
+  {
+    id: "q6",
+    question: "Which of the following is NOT one of the Nocturnal Arms?",
+    options: {
+      a: "Witch’s Staff",
+      b: "Sister Blades",
+      c: "Argent Skull",
+      d: "Shield of Chaos",
+    },
+    correct: "d",
+  },
+  {
+    id: "q7",
+    question: "Where can you access Incantations?",
+    options: {
+      a: "In the Olympian shrine in each region",
+      b: "From a menu in the pause screen",
+      c: "At the cauldron in the Crossroads",
+      d: "Only at the end of a successful run",
+    },
+    correct: "c",
+  },
+  {
+    id: "q8",
+    question: "What do Incantations generally do for the player?",
+    options: {
+      a: "Temporarily change the game into turn-based combat",
+      b: "Unlock new systems, NPCs, and upgrades",
+      c: "Delete all your current resources",
+      d: "Only change the colour of spell effects",
+    },
+    correct: "b",
+  },
+  {
+    id: "q9",
+    question:
+      "What is the name of the skill-tree-like altar where you equip Arcana Cards?",
+    options: {
+      a: "Altar of Ashes",
+      b: "Mirror of Night",
+      c: "Pool of Styx",
+      d: "Fated Ledger",
+    },
+    correct: "a",
+  },
+  {
+    id: "q10",
+    question: "Which description best fits the Nocturnal Arms as a group?",
+    options: {
+      a: "One-use consumable items",
+      b: "Weapons with unique playstyles and hammer upgrades",
+      c: "Cosmetic companions that follow you",
+      d: "Random boons from the gods",
+    },
+    correct: "b",
+  },
+  {
+    id: "q11",
+    question:
+      "Which deity's boons in Hades II focus on lightning damage and the Blitz status curse?",
+    options: {
+      a: "Zeus",
+      b: "Poseidon",
+      c: "Aphrodite",
+      d: "Dionysus",
+    },
+    correct: "a",
+  },
+  {
+    id: "q12",
+    question:
+      "Who offers powerful Hexes that act like Hades II's version of Calls from the first game?",
+    options: {
+      a: "Nyx",
+      b: "Selene",
+      c: "Hera",
+      d: "Demeter",
+    },
+    correct: "b",
+  },
+  {
+    id: "q13",
+    question: "Which of these is a core reason runs feel different every time?",
+    options: {
+      a: "The game deletes bosses you've already beaten",
+      b: "Randomized rooms, boons, and weapon upgrades",
+      c: "You must switch to a new weapon every run",
+      d: "The controls change each time",
+    },
+    correct: "b",
+  },
+  {
+    id: "q14",
+    question: "What are “Gathering Tools” mainly used for?",
+    options: {
+      a: "Fishing in the River Styx",
+      b: "Digging up seeds and reagents during runs",
+      c: "Opening Chaos Gates without health loss",
+      d: "Summoning a temporary companion",
+    },
+    correct: "b",
+  },
+  {
+    id: "q15",
+    question:
+      "Why might a player care about resources like Cinder, Pearl, and Tears?",
+    options: {
+      a: "They are only used to buy food in the Taverna",
+      b: "They are spent to unlock and upgrade weapon aspects and Arcana",
+      c: "They are required to start a new save file",
+      d: "They increase difficulty automatically when collected",
+    },
+    correct: "b",
+  },
+];
