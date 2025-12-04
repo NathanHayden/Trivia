@@ -8,10 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <script src="trivia.js" defer></script>
 </head>
 <body>
+  <!-- Accessible skip link -->
+  <a href="#trivia" class="skip-link">Skip to trivia</a>
+
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand brand-centered">
@@ -27,17 +28,27 @@
       </div>
     </div>
   </header>
+
   <main>
     <section id="hero" class="hero">
       <div class="container hero-inner single-column">
         <div class="hero-copy">
           <p class="eyebrow">Hades II Trivia</p>
           <h1>How well do you know <span class="accent">Hades II</span>?</h1>
+          <p class="hero-text">
+            Play a short trivia run based on Supergiant’s Hades II.
+          </p>
+          <ul class="hero-highlights">
+            <li>10-question run</li>
+            <li>Randomized order</li>
+            <li>Local score tracking</li>
+          </ul>
           <div class="hero-actions">
             <a href="#trivia" class="btn btn-primary">Start the Trivia</a>
             <a href="#gallery" class="btn btn-ghost">Skip to Media</a>
           </div>
         </div>
+
         <aside class="hero-channel-card">
           <div class="channel-top">
             <img
@@ -46,13 +57,11 @@
               class="boated-avatar">
             <div>
               <h2>Boated</h2>
+              <p class="channel-tagline">
+                Max Fear runs, cursed builds, and actually useful breakdowns.
+              </p>
             </div>
           </div>
-          <ul class="channel-list">
-            <li>High-octane Hades II gameplay</li>
-            <li>Max Fear clears and challenges</li>
-            <li>Guides, breakdowns, and chill commentary</li>
-          </ul>
           <a
             href="https://www.youtube.com/@Boat3d"
             target="_blank"
@@ -60,8 +69,10 @@
             class="btn btn-ghost btn-full">
             Visit Boated’s YouTube Channel
           </a>
+        </aside>
       </div>
     </section>
+
     <section id="funfact" class="section section-light">
       <div class="container">
         <article class="fun-fact-card">
@@ -70,9 +81,9 @@
             <h2>Melinoë is Zagreus’s sister</h2>
             <p>
               In Hades II you play as Melinoë, a witch and Princess of the Underworld
-              who sets out to face Chronos, the Titan of Time. It’s a perfect setup for
-              a roguelike where every “run” feels like rewinding and trying again, 
-              which is exactly how this trivia game works too.
+              who sets out to face Chronos, the Titan of Time. A roguelike where every
+              run is a “try again” fits perfectly with a time-obsessed villain and with
+              this trivia run, where you can keep rerolling for a better score.
             </p>
           </div>
         </article>
@@ -82,151 +93,61 @@
     <section id="trivia" class="section">
       <div class="container">
         <div class="section-header">
-          <h2>Hades II Trivia</h2>
+          <h2>Trivia Run</h2>
         </div>
 
-        <section class="question-bank" aria-label="Question pool (12 questions)">
-          <div class="trivia-grid">
-            <article class="question-card" data-id="q1" data-correct="b">
-              <h3>1. Who is the playable protagonist in Hades II?</h3>
-              <ul class="option-list">
-                <li data-answer="a">Zagreus</li>
-                <li data-answer="b">Melinoë</li>
-                <li data-answer="c">Nyx</li>
-                <li data-answer="d">Persephone</li>
-              </ul>
-            </article>
-
-            <article class="question-card" data-id="q2" data-correct="a">
-              <h3>2. Who is the main antagonist that Melinoë is hunting?</h3>
-              <ul class="option-list">
-                <li data-answer="a">Chronos</li>
-                <li data-answer="b">Hades</li>
-                <li data-answer="c">Zeus</li>
-                <li data-answer="d">Thanatos</li>
-              </ul>
-            </article>
-
-            <article class="question-card" data-id="q3" data-correct="c">
-              <h3>3. What genre best describes Hades II?</h3>
-              <ul class="option-list">
-                <li data-answer="a">Turn-based JRPG</li>
-                <li data-answer="b">Puzzle platformer</li>
-                <li data-answer="c">Action roguelike</li>
-                <li data-answer="d">Strategy city-builder</li>
-              </ul>
-            </article>
-
-            <article class="question-card" data-id="q4" data-correct="d">
-              <h3>4. Which of these is <em>not</em> a core system in Hades II?</h3>
-              <ul class="option-list">
-                <li data-answer="a">Boon selection from gods</li>
-                <li data-answer="b">Run-based dungeon layouts</li>
-                <li data-answer="c">Permanent meta progression</li>
-                <li data-answer="d">Turn-based grid movement</li>
-              </ul>
-            </article>
-
-            <article class="question-card" data-id="q5" data-correct="b">
-              <h3>5. What do Olympian boons generally do?</h3>
-              <ul class="option-list">
-                <li data-answer="a">Only change visuals</li>
-                <li data-answer="b">Alter attacks, specials, and casts</li>
-                <li data-answer="c">Replace your weapon mid-run</li>
-                <li data-answer="d">Pause enemy attacks</li>
-              </ul>
-            </article>
-
-            <article class="question-card" data-id="q6" data-correct="a">
-              <h3>6. What’s the main reason runs feel different each time?</h3>
-              <ul class="option-list">
-                <li data-answer="a">Randomized boons and rooms</li>
-                <li data-answer="b">Fixed layouts every run</li>
-                <li data-answer="c">Only cosmetic randomization</li>
-                <li data-answer="d">Time-of-day system</li>
-              </ul>
-            </article>
-
-            <article class="question-card" data-id="q7" data-correct="b">
-              <h3>7. Which statement about difficulty is most accurate?</h3>
-              <ul class="option-list">
-                <li data-answer="a">There are no difficulty options</li>
-                <li data-answer="b">There’s a “heat-style” challenge system</li>
-                <li data-answer="c">It’s purely story with no challenge</li>
-                <li data-answer="d">Difficulty can’t be adjusted</li>
-              </ul>
-            </article>
-
-            <article class="question-card" data-id="q8" data-correct="b">
-              <h3>8. Why do players keep doing runs after their first clear?</h3>
-              <ul class="option-list">
-                <li data-answer="a">Progress always resets to zero</li>
-                <li data-answer="b">Repeats unlock more story, builds, and upgrades</li>
-                <li data-answer="c">They must start a new save file</li>
-                <li data-answer="d">You can only play once per day</li>
-              </ul>
-            </article>
-
-            <article class="question-card" data-id="q9" data-correct="a">
-              <h3>9. Which studio develops Hades II?</h3>
-              <ul class="option-list">
-                <li data-answer="a">Supergiant Games</li>
-                <li data-answer="b">Team Cherry</li>
-                <li data-answer="c">FromSoftware</li>
-                <li data-answer="d">Larian Studios</li>
-              </ul>
-            </article>
-
-            <article class="question-card" data-id="q10" data-correct="b">
-              <h3>10. What kind of structure does Hades II use for its runs?</h3>
-              <ul class="option-list">
-                <li data-answer="a">One giant open world with no resets</li>
-                <li data-answer="b">Short, repeatable runs that reset when you die</li>
-                <li data-answer="c">A pure visual novel with choices</li>
-                <li data-answer="d">Turn-based tactical missions</li>
-              </ul>
-            </article>
-
-            <article class="question-card" data-id="q11" data-correct="c">
-              <h3>11. What do resources like Bones and Ashes let you do?</h3>
-              <ul class="option-list">
-                <li data-answer="a">Unlock only cosmetic skins</li>
-                <li data-answer="b">Skip straight to the final boss</li>
-                <li data-answer="c">Buy permanent upgrades and unlock new options</li>
-                <li data-answer="d">Change the game’s language</li>
-              </ul>
-            </article>
-
-            <article class="question-card" data-id="q12" data-correct="d">
-              <h3>12. What makes a typical Boated Hades II video fun to watch?</h3>
-              <ul class="option-list">
-                <li data-answer="a">He only shows the tutorial over and over</li>
-                <li data-answer="b">He plays with no commentary at all</li>
-                <li data-answer="c">He ignores mechanics and never explains anything</li>
-                <li data-answer="d">High-difficulty gameplay, jokes, and build experimentation</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
         <section class="active-question-area" aria-label="Active trivia question">
-          <form id="triviaForm" class="trivia-form" autocomplete="off">
-            <div id="answerOptions" class="answer-options">
+          <div class="trivia-header">
+            <h3 id="activeHeading" class="active-heading">Hades II Trivia Run</h3>
+            <div class="trivia-badges">
+               <span id="questionCounter" class="badge">Question 1/10</span>
+               <span id="triviaScore" class="badge badge-score">Score: 0</span>
             </div>
-            <div class="trivia-actions">
-              <button type="submit" class="btn btn-primary">Submit Answer</button>
-              </button>
+          </div>
+
+          <form id="triviaForm" class="trivia-layout" autocomplete="off">
+            <div class="trivia-question-box">
+              <p id="activeQuestionText" class="active-question-text">
+                Click “Start the Trivia” above or press the button below to begin a run.
+              </p>
+              <p id="triviaMessage" class="trivia-message" aria-live="polite">
+                Results await
+              </p>
+            </div>
+
+            <div id="answerOptions" class="trivia-options-grid">
+              <label class="answer-card">
+                <input type="radio" name="answer" id="answerA" value="a">
+                <span class="option-letter">A</span>
+                <span id="optionAText" class="option-text">Option A</span>
+              </label>
+
+              <label class="answer-card">
+                <input type="radio" name="answer" id="answerB" value="b">
+                <span class="option-letter">B</span>
+                <span id="optionBText" class="option-text">Option B</span>
+              </label>
+
+              <label class="answer-card">
+                <input type="radio" name="answer" id="answerC" value="c">
+                <span class="option-letter">C</span>
+                <span id="optionCText" class="option-text">Option C</span>
+              </label>
+
+              <label class="answer-card">
+                <input type="radio" name="answer" id="answerD" value="d">
+                <span class="option-letter">D</span>
+                <span id="optionDText" class="option-text">Option D</span>
+              </label>
+            </div>
+
+            <div class="trivia-footer">
+              <button type="submit" class="btn btn-primary btn-wide">Lock In Answer</button>
+              <p id="triviaBest" class="tiny-best">Best Run: — / 10</p>
             </div>
           </form>
-
-          <div class="trivia-results">
-            <p id="triviaScore" class="trivia-score" aria-live="polite"></p>
-            <p id="triviaBest" class="trivia-best"></p>
-            <p id="triviaMessage" class="trivia-message"></p>
-          </div>
         </section>
 
-        <!-- CUSTOM QUESTION BUILDER -->
         <section class="custom-section" aria-labelledby="customHeading">
           <h2 id="customHeading">Make your own Hades II question</h2>
           <p class="custom-description">
@@ -275,76 +196,43 @@
               Save Custom Question
             </button>
           </form>
-
         </section>
       </div>
     </section>
 
-    <!-- MEDIA: IMAGES + VIDEOS -->
     <section id="gallery" class="section section-dark">
       <div class="container">
         <div class="section-header">
           <h2>Hades II Gallery</h2>
         </div>
+
         <div class="gallery-grid">
           <figure class="gallery-item">
-            <img src="images/hades-2.webp" alt="Melinoë clashing with a cloaked figure in a swirl of magic.">
+            <img src="images/hades-2.webp" alt="Melinoë clashing with a cloaked figure.">
           </figure>
-
           <figure class="gallery-item">
             <img src="images/Hades-II-–-v1.0-Launch-Trailer-Available-Now-11.jpeg" alt="Melinoë kneeling with twin blades.">
           </figure>
-
           <figure class="gallery-item">
-            <img src="images/Hecate-and-Melinoe-in-Hades-2.webp" alt="Hecate looming behind Melinoë during a ritual.">
+            <img src="images/Hecate-and-Melinoe-in-Hades-2.webp" alt="Hecate looming behind Melinoë.">
           </figure>
-
           <figure class="gallery-item">
-            <img src="images/Background_art_of_Nocturnal_Arms.webp" alt="Nocturnal Arms circle in the underworld.">
+            <img src="images/Background_art_of_Nocturnal_Arms.webp" alt="Nocturnal Arms circle.">
           </figure>
-
           <figure class="gallery-item">
-            <img src="images/4466f770-d5e6-4985-81ab-90c8627a299c.jpeg" alt="Melinoë leaping into battle amid fire and blue flames.">
+            <img src="images/4466f770-d5e6-4985-81ab-90c8627a299c.jpeg" alt="Melinoë leaping into battle.">
           </figure>
-
           <figure class="gallery-item">
-            <img src="images/27426-17401237338261-1920.webp" alt="Melinoë flying toward a powerful foe.">
+            <img src="images/27426-17401237338261-1920.webp" alt="Melinoë flying toward a foe.">
           </figure>
-
           <figure class="gallery-item">
-            <img src="images/hecate.jpg" alt="hecate">
+            <img src="images/hecate.jpg" alt="Hecate framed in teal light.">
           </figure>
-
           <figure class="gallery-item">
-            <img src="images/7-Hades-II-–-v1.0-Launch-Trailer-Coming-Sep.-25-YouTube-0-0-39.jpeg" alt="Silhouette of a monstrous figure over a castle.">
+            <img src="images/1234.png" alt="Melinoë weapon art.">
           </figure>
-
           <figure class="gallery-item">
-            <img src="images/1234.png" alt="Melinoë swinging a glowing weapon.">
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="images/1234567.PNG" alt="Close-up of Melinoë’s face with different coloured eyes.">
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="images/s3dA6t9A9wnAhjV6dbqmhi.jpg" alt="Melinoë’s face in teal lighting, looking surprised.">
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="images/WartimeWallpaper2K.png" alt="Melinoë standing with a tall figure holding a massive axe.">
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="images/xPFFQiy6PFbmvmGjksDeJc.jpg" alt="Melinoë with glowing pink eye against blue clouds.">
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="images/hades-2-chaos-art-by-me-v0-naxayjhm245d1.webp" alt="Stylised character holding a mask in a starry cosmos.">
-          </figure>
-
-          <figure class="gallery-item">
-            <img src="images/jhony-caballero-melinoe-hades-logo-web.jpg" alt="Melinoë wrapped in green magic with the Hades II logo.">
+            <img src="images/WartimeWallpaper2K.png" alt="Melinoë and Nemesis.">
           </figure>
         </div>
 
@@ -358,32 +246,11 @@
                 loading="lazy"></iframe>
             </div>
           </article>
-
           <article class="video-card">
             <div class="video-wrapper">
               <iframe
                 src="https://www.youtube.com/embed/GhrLRSWdD4s"
                 title="Boated Hades II Video 2"
-                allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </article>
-
-          <article class="video-card">
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/D34dQFnmBj8"
-                title="Boated Hades II Video 3"
-                allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </article>
-
-          <article class="video-card">
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/pKfiMY5UW14"
-                title="Boated Hades II Video 4"
                 allowfullscreen
                 loading="lazy"></iframe>
             </div>
@@ -397,5 +264,7 @@
     <div class="container">
     </div>
   </footer>
+
+  <script src="trivia.js"></script>
 </body>
 </html>

@@ -1,5 +1,7 @@
 const getElement = (selector) => document.querySelector(selector);
 
+document.addEventListener("DOMContentLoaded", () => {
+
 const triviaPool = [
   {
     id: "q1",
@@ -61,7 +63,7 @@ const triviaPool = [
     id: "q6",
     question: "Which of the following is NOT one of the Nocturnal Arms?",
     options: {
-      a: "Witch’s Staff",
+      a: "Witch's Staff",
       b: "Sister Blades",
       c: "Argent Skull",
       d: "Shield of Chaos",
@@ -172,3 +174,13 @@ const triviaPool = [
     correct: "b",
   },
 ];
+
+let thisRound = [];
+let index = 0;
+let score = 0;
+let bestScore = 0;
+
+const totalQuestionsThisRun = 10;
+let isRoundOver = false;
+
+})
