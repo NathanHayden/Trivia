@@ -2,6 +2,11 @@ const getElement = (selector) => document.querySelector(selector);
 
 document.addEventListener("DOMContentLoaded", () => {
 
+const KEYS = {
+    bestScore: "hades2TriviaBestScore",
+    customQuestions: "hades2TriviaCustomQuestions",
+}
+
 const triviaPool = [
   {
     id: "q1",
@@ -262,6 +267,11 @@ const optionText = {
     isRoundOver = true
     if (score > bestScore) {
       bestScore = score
+      try {
+        localStorage.setItem(KEYS.bestScore, String(bestScore))
+      } catch (err) {
+        console.warn("Could not save best score", err)
+      }
     }
     questionText.innerHTML = `
       You scored <strong>${score}</strong> out of <strong>${thisRound.length}</strong>.
@@ -334,7 +344,8 @@ const startLink = getElement("#startTriviaLink")
       message.textContent = "Fill in all fields and choose which option is correct."
       return
     }
-
+    
+    const answers = [a, b, c, d]
     const uniqueAnswers = new Set(answers)
     if (uniqueAnswers.size < answers.length) {
     message.textContent = "Each answer choice must be different."
@@ -348,8 +359,58 @@ const startLink = getElement("#startTriviaLink")
       correct: correct,
     }
     triviaPool.push(newQuestion)
+    try {
+      const customOnly = triviaPool.filter(
+        (q) => typeof q.id === "string" && q.id.startsWith("custom-")
+      )
+      localStorage.setItem(KEYS.customQuestions, JSON.stringify(customOnly))
+    } catch (err) {
+      console.warn("Could not save custom questions", err)
+    }
     message.textContent = "Custom question saved! It may appear in future runs."
     customForm.reset()
   })
+  const loadStoredData = () => {
+    const storedBest = localStorage.getItem(KEYS.bestScore)
+    if (storedBest !== null) {
+    const parsed = Number(storedBest)
+    if (!Number.isNaN(parsed) && parsed >= 0) {
+    bestScore = parsed
+  }
+}
+    const storedCustom = localStorage.getItem(KEYS.customQuestions);
+    if (storedCustom) {
+    try {
+      const parsed = JSON.parse(storedCustom);
+      if (Array.isArray(parsed)) {
+        parsed.forEach((q) => {
+      if (q && typeof q === "object" && typeof q.question === "string" && q.options && typeof q.correct === "string") {
+        triviaPool.push(q)
+      }
+    })
+  }
+} 
+      catch (err) {
+        console.error("Failed to parse stored custom questions", err);
+      }
+    }
+  }
+  const clearCustomBtn = getElement("#clearCustomQuestions")
+  if (clearCustomBtn) {
+    clearCustomBtn.addEventListener("click", () => {
+      const baseQuestions = triviaPool.filter(
+        (q) => !q.id || !String(q.id).startsWith("custom-")
+      )
+      triviaPool.length = 0
+      baseQuestions.forEach((q) => triviaPool.push(q))
+      try {
+        localStorage.removeItem(KEYS.customQuestions)
+      } catch (err) {
+        console.warn("Could not clear custom questions", err)
+      }
+      message.textContent = "All custom questions have been cleared."
+    })
+  }
+  loadStoredData()
   updateDisplay()
 })
