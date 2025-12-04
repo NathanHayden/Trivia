@@ -237,4 +237,37 @@ const optionText = {
     return round
   }
 
+  const showQuestion = () => {
+    const current = thisRound[index]
+    if (!current) return
+    questionText.textContent = current.question
+    optionText.a.textContent = current.options.a
+    optionText.b.textContent = current.options.b
+    optionText.c.textContent = current.options.c
+    optionText.d.textContent = current.options.d
+    message.textContent = "Select an answer and lock it in."
+    clearSelection()
+    updateHud()
+  }
+
+  const startRun = () => {
+    thisRound = buildNewRound()
+    index = 0;
+    score = 0;
+    isRoundOver = false;
+    showQuestion();
+  };
+
+  const finishRun = () => {
+    isRoundOver = true
+    if (score > bestScore) {
+      bestScore = score
+    }
+    questionText.innerHTML = `
+      You scored <strong>${score}</strong> out of <strong>${thisRound.length}</strong>.
+    `
+    message.textContent = 'Press "Lock In Answer" to start a new run.'
+    updateHud()
+  }
+
 })
