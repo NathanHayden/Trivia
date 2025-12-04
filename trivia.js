@@ -180,7 +180,61 @@ let index = 0;
 let score = 0;
 let bestScore = 0;
 
-const totalQuestionsThisRun = 10;
-let isRoundOver = false;
+const totalQuestionsThisRun = 10
+let isRoundOver = false
+
+const questionCounter = getElement("#questionCounter")
+const triviaScore = getElement("#triviaScore")
+const best = getElement("#triviaBest")
+
+const questionText = getElement("#activeQuestionText")
+const message = getElement("#triviaMessage")
+
+const optionText = {
+  a: getElement("#optionAText"),
+  b: getElement("#optionBText"),
+  c: getElement("#optionCText"),
+  d: getElement("#optionDText"),
+}
+
+  const triviaForm = getElement("#triviaForm")
+  const answerOptions = getElement("#answerOptions")
+
+  const answerInputs = Array.from(
+    answerOptions.querySelectorAll('input[name="answer"]')
+  )
+
+  const clearSelection = () => {
+    answerInputs.forEach((input) => {
+      input.checked = false
+    })
+  }
+
+  const getSelectedAnswer = () => {
+    const selected = answerInputs.find((input) => input.checked)
+    return selected ? selected.value : null
+  }
+
+  const updateDisplay = () => {
+    if (thisRound.length > 0 && !isRoundOver && index < thisRound.length){
+      questionCounter.textContent = `Question ${index + 1}/${thisRound.length}`
+    }
+    triviaScore.textContent = `Score: ${score}`
+    best.textContent = bestScore > 0 ? `Best Run: ${bestScore} / ${totalQuestionsThisRun}` : `Best Run: — / ${totalQuestionsThisRun}`
+  }
+  
+  const buildNewRound = () => {
+    const poolCopy = [...triviaPool]
+    const round = []
+    const limit = Math.min(totalQuestionsThisRun, poolCopy.length)
+  
+    for (let i = 0; i < limit; i++) {
+      const randomIndex = Math.floor(Math.random() * poolCopy.length)
+      round.push(poolCopy[randomIndex])
+      poolCopy.splice(randomIndex, 1)
+    }
+  
+    return round
+  }
 
 })
