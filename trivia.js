@@ -247,7 +247,7 @@ const optionText = {
     optionText.d.textContent = current.options.d
     message.textContent = "Select an answer and lock it in."
     clearSelection()
-    updateHud()
+    updateDisplay()
   }
 
   const startRun = () => {
@@ -267,7 +267,7 @@ const optionText = {
       You scored <strong>${score}</strong> out of <strong>${thisRound.length}</strong>.
     `
     message.textContent = 'Press "Lock In Answer" to start a new run.'
-    updateHud()
+    updateDisplay()
   }
 
   triviaForm.addEventListener("submit", (event) => {
@@ -302,4 +302,54 @@ const optionText = {
       finishRun()
     }
   })
+
+const startLink = getElement("#startTriviaLink")
+  if (startLink) {
+  startLink.addEventListener("click", () => {
+    if (thisRound.length === 0 || isRoundOver) {
+      startRun()
+    }
+  })
+}
+
+  const customQuestion = getElement("#customQuestion")
+  const customA = getElement("#customA")
+  const customB = getElement("#customB")
+  const customC = getElement("#customC")
+  const customD = getElement("#customD")
+  const customCorrect = getElement("#customCorrect")
+  const customForm = getElement("#customQuestionForm")
+
+  customForm.addEventListener("submit", (event) => {
+    event.preventDefault()
+
+    const text = customQuestion.value.trim()
+    const a = customA.value.trim()
+    const b = customB.value.trim()
+    const c = customC.value.trim()
+    const d = customD.value.trim()
+    const correct = customCorrect.value
+
+    if (!text || !a || !b || !c || !d || !correct) {
+      message.textContent = "Fill in all fields and choose which option is correct."
+      return
+    }
+
+    const uniqueAnswers = new Set(answers)
+    if (uniqueAnswers.size < answers.length) {
+    message.textContent = "Each answer choice must be different."
+    return
+   }
+
+    const newQuestion = {
+      id: `custom-${Date.now()}`,
+      question: text,
+      options: { a, b, c, d },
+      correct: correct,
+    }
+    triviaPool.push(newQuestion)
+    message.textContent = "Custom question saved! It may appear in future runs."
+    customForm.reset()
+  })
+  updateDisplay()
 })
