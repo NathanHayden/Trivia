@@ -252,11 +252,11 @@ const optionText = {
 
   const startRun = () => {
     thisRound = buildNewRound()
-    index = 0;
-    score = 0;
-    isRoundOver = false;
-    showQuestion();
-  };
+    index = 0
+    score = 0
+    isRoundOver = false
+    showQuestion()
+  }
 
   const finishRun = () => {
     isRoundOver = true
@@ -270,4 +270,36 @@ const optionText = {
     updateHud()
   }
 
+  triviaForm.addEventListener("submit", (event) => {
+    event.preventDefault()
+
+    if (thisRound.length === 0 || isRoundOver) {
+      startRun();
+      return;
+    }
+
+    const current = thisRound[index]
+    const selectedValue = getSelectedAnswer()
+
+    if (!selectedValue) {
+      message.textContent = "Please choose an answer before submitting."
+      return
+    }
+
+    if (selectedValue === current.correct) {
+      score += 1
+      message.textContent = "Correct!"
+    } else {
+      const correctText = current.options[current.correct]
+      message.textContent = `Incorrect. The correct answer was: ${correctText}`
+    }
+
+    index += 1
+
+    if (index < thisRound.length) {
+      showQuestion()
+    } else {
+      finishRun()
+    }
+  })
 })
